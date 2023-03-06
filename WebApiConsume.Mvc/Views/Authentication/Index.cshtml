@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Authentication /Index Sayfasına Hoşgeldiniz.</h1>
+
+<h3> @Context.User.Claims.Where(x=>x.Type=="accessToken").Select(x=>x.Value).SingleOrDefault()</h3>

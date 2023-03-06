@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@model ProductCreateVm
+@if (TempData["errorMessage"] is not null)
+{
+    <p style="color:red">
+        @TempData["errorMessage"]?.ToString()
+    </p>
+}
+<form asp-action="Create" asp-controller="Product">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Ürün Adı</label>
+            <input type="text" class="form-control" asp-for="@Model.Name">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>Ürün Fiyatı</label>
+            <input type="text" class="form-control" asp-for="@Model.Price">
+        </div>
+
+
+        <div class="form-group col-md-6">
+            <label>Ürün Stoğu</label>
+            <input type="text" class="form-control" asp-for="@Model.Stock">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>Kategori</label>
+            <input type="text" class="form-control" asp-for="@Model.CategoryId">
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
